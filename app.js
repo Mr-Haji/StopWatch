@@ -8,6 +8,8 @@ var getmiliseconds = document.getElementById("miliSec");
 var getseconds = document.getElementById("seconds");
 var getminutes = document.getElementById("minutes");
 
+var strt = document.getElementById("btn-start")
+var num = document.getElementById("digit")
 
 function stopWatch() {
   ms++;
@@ -26,12 +28,17 @@ function stopWatch() {
 }
 
 function sttimer() {
-  interval = setInterval(stopWatch, 5)
+  interval = setInterval(stopWatch, 10)
+  strt.className = ("hidden");
+  num.className = ("size");
 
 }
 
 function stop() {
   clearInterval(interval);
+  strt.className = ("button");
+  num.className = ("digit")
+
 }
 
 function reset() {
@@ -76,11 +83,15 @@ function timstopWatch() {
 }
 
 function timer() {
-  timinterval = setInterval(timstopWatch, 5)
+  timinterval = setInterval(timstopWatch, 10)
+  strt.className = ("hidden");
+  num.className = ("size");
 }
 
 function timstop() {
   clearInterval(timinterval);
+  strt.className = ("button");
+  num.className = ("digit");
 }
 
 function timreset() {
